@@ -1,0 +1,16 @@
+<div class="container" style="margin-top: 20px;">
+  <div class="row">
+      <div class="col-md-8">
+        <h1 style="margin-bottom: 10px;">
+          Welcome to {{ title }}!
+        </h1>
+        <nav style="margin-bottom: 10px;">
+          <a routerLink="create" routerLinkActive="active">Create</a>
+          <a routerLink="manage" routerLinkActive="active" style="margin-left: 20px">Manage</a>
+          <a routerLink="search" routerLinkActive="active" style="margin-left: 20px">Search</a>
+        </nav>
+        <router-outlet></router-outlet>
+      </div>
+  </div>
+</div>
+

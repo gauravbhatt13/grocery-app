@@ -1,0 +1,9 @@
+<label><b>Search Grocery Items by category (OR):</b></label>
+<app-tag-checkboxgroup [options]="tagOptions"></app-tag-checkboxgroup>
+<button (click)="onSearch()" class="btn btn-primary" style="margin-top: 10px">Search</button>
+<div *ngIf="searchItems?.length > 0" style="margin-top: 10px">
+  <div><span><b>Search results:</b></span></div>
+  <div *ngFor="let item of searchItems">
+    {{item.name}}
+  </div>
+</div>

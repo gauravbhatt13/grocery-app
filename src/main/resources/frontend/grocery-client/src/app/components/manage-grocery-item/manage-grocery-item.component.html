@@ -1,0 +1,26 @@
+<div>
+  <span><b>Click on item to update or delete: </b></span>
+</div>
+<ul class="heroes">
+  <li *ngFor="let item of groceryItems" tabindex="1" (click)="onSelect(item)">
+    <span>{{item.name}}</span>
+  </li>
+</ul>
+
+<div *ngIf="selectedItem">
+  <h5>Selected Item : {{selectedItem.name}}</h5>
+  <div>
+    <div>
+      <label for="name" style="margin-right: 10px;"><b>Name</b></label>
+      <input id="name" [(ngModel)]="selectedItem.name" placeholder="name" class="form-control"/>
+    </div>
+    <div>
+      <label><b>Category</b></label>
+    </div>
+    <app-tag-checkboxgroup [options]="tagOptions"></app-tag-checkboxgroup>
+  </div>
+  <div style="margin-top: 10px;">
+    <button (click)="onUpdate()" class="btn btn-primary">Update</button>
+    <button (click)="onDelete()" class="btn btn-danger" style="margin-left: 10px">Delete</button>
+  </div>
+</div>
